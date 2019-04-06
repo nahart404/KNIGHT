@@ -13,6 +13,20 @@ public class GameStatus : MonoBehaviour
     //game state variables  (like score)
     [SerializeField] int currentScore = 0; //score should change via the player breaking blocks
 
+    private void Awake() //method runs before start (look up unity execution order)
+    {
+        int gameStatusCount = FindObjectsOfType<GameStatus>().Length; //finds the number of game statuses running
+
+        //if there's more then one, delete this instance of gameStatus object
+        if (gameStatusCount > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject); //don't destroy object
+        }
+    }
     void Start()
     {
         //display the current score

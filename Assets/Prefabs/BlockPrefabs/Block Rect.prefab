@@ -94,6 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakingSound: {fileID: 8300000, guid: 858e67ef0734a674b9b5c55a2885505e, type: 3}
+  volume: 0.04
+  blockParticlesVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
 --- !u!61 &6902354281557866476
 BoxCollider2D:
   m_ObjectHideFlags: 0

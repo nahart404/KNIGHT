@@ -1989,7 +1989,7 @@ PrefabInstance:
     - target: {fileID: 3090733011160371363, guid: 23315347b263e784ba9dfe4778dcdda4,
         type: 3}
       propertyPath: m_Name
-      value: Game Status
+      value: Game Session
       objectReference: {fileID: 0}
     - target: {fileID: 3090733011160371365, guid: 23315347b263e784ba9dfe4778dcdda4,
         type: 3}
@@ -2046,11 +2046,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6457543297705865100, guid: 23315347b263e784ba9dfe4778dcdda4,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 3765128713111935468}
     - target: {fileID: 3501435617761883183, guid: 23315347b263e784ba9dfe4778dcdda4,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -2132,12 +2127,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1581b4e143a03744acf669d0d3ac8db, type: 3}
---- !u!20 &3765128713111935468 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 3765128712389847496, guid: e1581b4e143a03744acf669d0d3ac8db,
-    type: 3}
-  m_PrefabInstance: {fileID: 3765128713111935467}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3851812643127505343
 PrefabInstance:
   m_ObjectHideFlags: 0

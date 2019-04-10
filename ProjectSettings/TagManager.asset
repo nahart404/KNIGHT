@@ -7,6 +7,8 @@ TagManager:
   - Breakable
   - Unbreakable
   - MultiHit
+  - 2-Hit
+  - 3-Hit
   layers:
   - Default
   - TransparentFX

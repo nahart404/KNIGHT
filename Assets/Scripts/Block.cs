@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class Block : MonoBehaviour
     [SerializeField] float volume = .04f; //set the volume
     [SerializeField] GameObject blockParticlesVFX;
     [SerializeField] int maxHits; //max hits certain blocks take before breaking
+    [SerializeField] Sprite[] hitSprites; //array of sprites for blocks that need more than one hit to break
 
     //references to other classes !!!Don't forget to assign values to references (FindObjectOfType<>())!
     Level level;
@@ -51,11 +53,22 @@ public class Block : MonoBehaviour
             {
                 DestroyBlock(); //destroy
             }
+            else 
+            {
+                ShowNextSprite();
+            }
         }
         else if (tag == "Breakable")//if assigned tag of block is "breakable" 
         {  
                 DestroyBlock(); //destroy
         }
+    }
+
+    //makes the sprite renderer in unity display a new sprite from the array
+    private void ShowNextSprite()
+    {
+        int spriteIndex = timesHit -1;
+        GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
     }
 
     private void DestroyBlock()

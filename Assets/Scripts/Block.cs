@@ -8,10 +8,13 @@ public class Block : MonoBehaviour
     [SerializeField] AudioClip breakingSound;
     [SerializeField] float volume = .04f; //set the volume
     [SerializeField] GameObject blockParticlesVFX;
+    [SerializeField] int maxHits; //max hits certain blocks take before breaking
 
     //references to other classes !!!Don't forget to assign values to references (FindObjectOfType<>())!
     Level level;
-    //GameStatus status;
+
+    //state varaibles
+    int timesHit;
 
     public void Start()
     {
@@ -24,19 +27,34 @@ public class Block : MonoBehaviour
         //find and assign what level is
         level = FindObjectOfType<Level>();
 
-        if (tag == "Breakable")
+        if (tag == "Breakable" || tag == "MultiHit")//if assigned tag of block is "breakable" OR "MultiHit"
         {
             //update number of blocks from the Level class reference
             level.CountBreakableBlocks();
         }
     }
 
-    //destory block when ball collides with it
+    //action taken when ball collides with a type of block
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (tag == "Breakable") //if assigned tag of block is "breakable"
+        HandleHit();
+    }
+
+    //handles what happens when the ball hits the different types of blocks using tags
+    private void HandleHit()
+    {
+        if (tag == "MultiHit") //if it's a "MultiHit" block
         {
-            DestroyBlock();
+            //inc the timesHit
+            timesHit++;
+            if (timesHit >= maxHits)
+            {
+                DestroyBlock(); //destroy
+            }
+        }
+        else if (tag == "Breakable")//if assigned tag of block is "breakable" 
+        {  
+                DestroyBlock(); //destroy
         }
     }
 

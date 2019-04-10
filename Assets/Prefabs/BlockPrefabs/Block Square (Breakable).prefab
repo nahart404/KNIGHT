@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3851812642118531725}
   - component: {fileID: 3851812642118531724}
   m_Layer: 0
-  m_Name: Block Square
-  m_TagString: Breakable
+  m_Name: Block Square (Breakable)
+  m_TagString: MultiHit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,3 +122,4 @@ MonoBehaviour:
   breakingSound: {fileID: 8300000, guid: 858e67ef0734a674b9b5c55a2885505e, type: 3}
   volume: 0.04
   blockParticlesVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
+  maxHits: 2

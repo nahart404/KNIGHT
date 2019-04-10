@@ -15,27 +15,40 @@ public class Block : MonoBehaviour
 
     public void Start()
     {
+        CountBlocks(); /*assigns level and counts the number of breakable blocks that the player
+                        needs to destroy in the level to move on to the next*/
+    }
+
+    private void CountBlocks()
+    {
         //find and assign what level is
         level = FindObjectOfType<Level>();
 
-        //update number of blocks from the Level class reference
-        level.CountBreakableBlocks();
+        if (tag == "Breakable")
+        {
+            //update number of blocks from the Level class reference
+            level.CountBreakableBlocks();
+        }
     }
+
     //destory block when ball collides with it
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        DestroyBlock();
+        if (tag == "Breakable") //if assigned tag of block is "breakable"
+        {
+            DestroyBlock();
+        }
     }
 
     private void DestroyBlock()
     {
-        PlayDestorySFX();
+       PlayDestorySFX();
 
-        TriggerBlockVFX(); //call to add particle effect
-        Destroy(gameObject); //destroys the object in that running of the game
+       TriggerBlockVFX(); //call to add particle effect
+       Destroy(gameObject); //destroys the object in that running of the game
 
-        //now call method to remove 1 from the block counter (in Level class)
-        level.BlockDestroyed();
+       //now call method to remove 1 from the block counter (in Level class)
+       level.BlockDestroyed();
     }
 
     private void PlayDestorySFX()

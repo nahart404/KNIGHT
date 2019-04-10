@@ -9,7 +9,6 @@ public class Block : MonoBehaviour
     [SerializeField] AudioClip breakingSound;
     [SerializeField] float volume = .04f; //set the volume
     [SerializeField] GameObject blockParticlesVFX;
-    [SerializeField] int maxHits; //max hits certain blocks take before breaking
     [SerializeField] Sprite[] hitSprites; //array of sprites for blocks that need more than one hit to break
 
     //references to other classes !!!Don't forget to assign values to references (FindObjectOfType<>())!
@@ -49,6 +48,9 @@ public class Block : MonoBehaviour
         {
             //inc the timesHit
             timesHit++;
+            //max hits certain blocks take before breaking
+            int maxHits = hitSprites.Length + 1; //+1 b/c array entry starts at 0
+
             if (timesHit >= maxHits)
             {
                 DestroyBlock(); //destroy
@@ -67,8 +69,16 @@ public class Block : MonoBehaviour
     //makes the sprite renderer in unity display a new sprite from the array
     private void ShowNextSprite()
     {
-        int spriteIndex = timesHit -1;
-        GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+        int spriteIndex = timesHit - 1;
+        //some code to protect against a null in the array index
+        if (hitSprites[spriteIndex] != null)
+        { 
+            GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+        }
+        else //show that there's something wrong
+        {
+            Debug.LogError("Something went wrong with the sprite array" + gameObject.name);
+        }
     }
 
     private void DestroyBlock()

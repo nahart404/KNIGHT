@@ -1,6 +1,6 @@
-﻿using System;
+﻿/*using System;
 using System.Collections;
-using System.Collections.Generic;
+using System.Collections.Generic;*/
 using UnityEngine;
 
 public class Ball : MonoBehaviour
@@ -11,6 +11,7 @@ public class Ball : MonoBehaviour
     [SerializeField] float ballVeloY = 14.5f;
     [SerializeField] AudioClip[] ballSounds; //array fo audio clips used for the ball
     [SerializeField] float volume = .04f; //set the volume
+    [SerializeField] float randomFactor = .02f; //added to help fix the bug where the ball gets stuck on a horizonal axis
 
 
     bool hasStarted = false;
@@ -20,6 +21,7 @@ public class Ball : MonoBehaviour
 
     //Cached Component References
     AudioSource ballAudio;
+    Rigidbody2D myRigidBody2D;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,7 @@ public class Ball : MonoBehaviour
 
         //when game starts, get needed references
         ballAudio = GetComponent<AudioSource>();
+        myRigidBody2D = GetComponent<Rigidbody2D>();
         
     }
 
@@ -49,7 +52,7 @@ public class Ball : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) //0 is used for left mouse click
         {
             //launch ball by using it's rigidbody2d body in Unity
-            GetComponent<Rigidbody2D>().velocity = new Vector2(ballVeloX, ballVeloY);
+            myRigidBody2D.velocity = new Vector2(ballVeloX, ballVeloY);
             hasStarted = true; //once the player clicks, it's no longer the "start" of the level
             //so the ball doesn't need to be locked to the paddle anymore
         }
@@ -65,6 +68,9 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) //create a method to activate on collision
     {
+        Vector2 veloChange = new Vector2(
+                            Random.Range(0f, randomFactor), 
+                            Random.Range(0f, randomFactor)); //for randomFactor moving of ball
         if (hasStarted) //if the game has started
         {
             //assign clip to a random sound from the array
@@ -72,6 +78,8 @@ public class Ball : MonoBehaviour
            
             //note: PlayOneShot makes it to where the audio plays all the way through and never gets interupted
             ballAudio.PlayOneShot(clip, volume); //plays the audio source found on Ball
+
+            myRigidBody2D.velocity += veloChange; //changes the velocity of ball to avoid forever bouncing loops
         }
 
     }

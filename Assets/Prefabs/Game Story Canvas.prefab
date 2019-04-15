@@ -26,7 +26,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4572731436093855490}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 89.89796}
   m_LocalScale: {x: 0.020018587, y: 0.020018587, z: 0.020018587}
   m_Children:
@@ -312,4 +312,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4572731437053770444}
-  currentState: {fileID: 11400000, guid: 8cf487d2383564f47b14afce10e34b2a, type: 2}
+  startingState: {fileID: 11400000, guid: 8cf487d2383564f47b14afce10e34b2a, type: 2}

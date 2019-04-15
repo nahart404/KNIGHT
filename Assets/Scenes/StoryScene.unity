@@ -550,6 +550,29 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4572731437190673436, guid: 8c0aae40772f79343ba2a15c5b5faf3d,
+        type: 3}
+      propertyPath: allStates.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572731437190673436, guid: 8c0aae40772f79343ba2a15c5b5faf3d,
+        type: 3}
+      propertyPath: allStates.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8cf487d2383564f47b14afce10e34b2a,
+        type: 2}
+    - target: {fileID: 4572731437190673436, guid: 8c0aae40772f79343ba2a15c5b5faf3d,
+        type: 3}
+      propertyPath: allStates.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: dc222b711432b1c48a804ef7154aa7b5,
+        type: 2}
+    - target: {fileID: 4572731437190673436, guid: 8c0aae40772f79343ba2a15c5b5faf3d,
+        type: 3}
+      propertyPath: allStates.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: c3fcaaef9350b604bbc23e44a4f4f5ad,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c0aae40772f79343ba2a15c5b5faf3d, type: 3}
 --- !u!1001 &5464203175490096895

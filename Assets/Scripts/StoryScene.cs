@@ -8,30 +8,38 @@ public class StoryScene : MonoBehaviour
 {
     //config
     [SerializeField] TextMeshProUGUI textComponent; //Text is from the UnityEngine.UI namespace
-    [SerializeField] State currentState;//of type "State"
-
+    [SerializeField] State[] allStates; //array of states
 
 //class references
-SceneLoader loader;  //Sceneloader class reference
-State state;
+    SceneLoader loader;  //Sceneloader class reference
+    State state;
+    GameSession game;
 
-// Start is called before the first frame update
-void Start()
+   
+    // Start is called before the first frame update
+    void Start()
     {
         loader = FindObjectOfType<SceneLoader>(); //reference the values of loader when the code starts
+        game = FindObjectOfType<GameSession>();
 
-        //set up start state and get story text from it
-        state = currentState;
+        //then set up the current state and get story text from it
+        state = allStates[game.GetCurrentState()];
+        //state = startingState;
         textComponent.text = state.GetStateStory();
+
 }
 
     // Update is called once per frame
     void Update()
     {
-           
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            loader.LoadNextScene(); //call LoadNextScene() from Sceneloader
+            /*problem: currentSceneIndex and currentStateIndex are not exactly the same. (scene should be 1 more
+         than state) and that causes a problem with transition to the correct scene after the correct state
+         */
+
+            loader.LoadNextScene(game.GetCurrentState() + 1); //call LoadNextScene() from Sceneloader
             ManageState(); //set up the next scenes/states
         }
     }
@@ -40,15 +48,9 @@ void Start()
     {
         var nextStates = state.GetNextStates(); //gets value from State class's method
 
-        //for loop to fix array out of bounds (player choosing a choice that isn't used in a state)
-        /*for (int i = 0; i < nextStates.Length; i++)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1 + i)) // + i changes the key code for each loop
-            {
-                state = nextStates[i]; //changes the access state as well. mind blown
-            }
-        }*/
-        //state = nextStates[0]; //changes the access state as well. mind blown
+        //inc state index by one
+        game.GetNextState();
+        
         textComponent.text = state.GetStateStory(); //update text for when state has changed
     }
 }

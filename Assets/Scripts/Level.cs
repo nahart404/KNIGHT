@@ -7,6 +7,7 @@ public class Level : MonoBehaviour
 
     //config
     [SerializeField] int breakableBlocks; //serial for debugging
+    int currentSceneIndex; //used to keep track of the player's progress while jumping between levels and story scene
 
     //class references
     SceneLoader loader;  //Sceneloader class reference
@@ -30,7 +31,8 @@ public class Level : MonoBehaviour
         //then check if the number of breakable blocks have reached zero (win condition)
         if (breakableBlocks <= 0)
         {
-            loader.LoadNextScene(); //call LoadNextScene() from Sceneloader
+            //loader.LoadNextScene(); //call LoadNextScene() from Sceneloader
+            loader.LoadStoryScene(); //call to load story scene
         }
     }
 }

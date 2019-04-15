@@ -12,6 +12,7 @@ public class GameSession : MonoBehaviour
 
     //game state variables  (like score)
     [SerializeField] int currentScore = 0; //score should change via the player breaking blocks
+    [SerializeField] int currentState = 0; //will always start at 0 to represent the Openning state
 
     private void Awake() //method runs before start (look up unity execution order)
     {
@@ -62,5 +63,16 @@ public class GameSession : MonoBehaviour
     public void resetGame()
     {
         Destroy(gameObject);
+    }
+
+    //next two methods are for keeping track of the current story state the player is on
+    public int GetNextState()
+    {
+        currentState++; //inc next
+        return currentState;
+    }
+    public int GetCurrentState()
+    {
+        return currentState;
     }
 }

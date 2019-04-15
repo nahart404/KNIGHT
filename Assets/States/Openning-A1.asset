@@ -16,5 +16,10 @@ MonoBehaviour:
 
 
     Press Space to Continue...'
+  states:
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: dc222b711432b1c48a804ef7154aa7b5, type: 2}
+  - {fileID: 11400000, guid: c3fcaaef9350b604bbc23e44a4f4f5ad, type: 2}
   nextStates:
   - {fileID: 11400000, guid: dc222b711432b1c48a804ef7154aa7b5, type: 2}
+  - {fileID: 11400000, guid: c3fcaaef9350b604bbc23e44a4f4f5ad, type: 2}

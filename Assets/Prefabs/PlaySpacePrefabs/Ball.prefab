@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7679372262791662310}
   - component: {fileID: 7679372263206618899}
   - component: {fileID: 371652167}
+  - component: {fileID: 1077990646}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -141,6 +142,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e6442d76af1ff574cb99272601fdd9cf, type: 3}
   - {fileID: 8300000, guid: 5dde40675d2398142a9e24d019079636, type: 3}
   - {fileID: 8300000, guid: 8ea0fec638423f441804416b1ef303d6, type: 3}
+  volume: 0.04
+  randomFactor: 0.02
 --- !u!82 &7679372263206618899
 AudioSource:
   m_ObjectHideFlags: 0
@@ -153,7 +156,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.022
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -249,7 +252,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5ff4f9250eca8fd4c9f5665e9f898061, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.041
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -333,3 +336,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!233 &1077990646
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7679372262791662307}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0.00000003453333, y: 0.00000002824828}
+  m_ConnectedAnchor: {x: 0.022345295, y: -2.4661088}
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 359

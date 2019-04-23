@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Chain : MonoBehaviour
 {
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!DON'T NEED THIS SCRIPT
     //config
     //need both paddle and ball class
     [SerializeField] Paddle paddle1;
@@ -21,8 +22,8 @@ public class Chain : MonoBehaviour
     void Start()
     {
         spriteLength = chainSprite.bounds.size.y; //the length of sprite
-        //currentPosition = gameObject.transform.position; //get current position of the sprite object
-        
+        currentPosition = gameObject.transform.position; //get current position of the sprite object
+        //currentPosition = new Vector2(paddle1.transform.position.x, lastChain.transform.position.y + spriteLength / 2);
     }
 
     // Update is called once per frame
@@ -30,8 +31,8 @@ public class Chain : MonoBehaviour
     {
         //LastChainPosition = new Vector2(lastChain.transform.position.x, lastChain.transform.position.y); //last position
 
-        currentPosition = new Vector2(paddle1.transform.position.x, spriteLength/2); //new chain position
-        transform.position = currentPosition;
+        Vector2 newChainPosition = new Vector2(lastChain.transform.position.x, lastChain.transform.position.y + spriteLength/2); //new chain position
+        gameObject.transform.position = newChainPosition;
 
         //drawSprite(dist);
                 

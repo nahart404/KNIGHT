@@ -4529,6 +4529,25 @@ Rigidbody2D:
     type: 3}
   m_PrefabInstance: {fileID: 892104879}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &892104881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5834411024344960570, guid: 12fe1a91f7a720c43b94ddeba68a3a59,
+    type: 3}
+  m_PrefabInstance: {fileID: 892104879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &892104882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892104881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e72277e7f7c804aa113c5cd6dcd2c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball1: {fileID: 182077325}
 --- !u!1 &896442996
 GameObject:
   m_ObjectHideFlags: 0

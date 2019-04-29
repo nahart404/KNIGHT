@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class GameSession : MonoBehaviour
     //game state variables  (like score)
     [SerializeField] int currentScore = 0; //score should change via the player breaking blocks
     [SerializeField] int currentState = 0; //will always start at 0 to represent the Openning state
+    [SerializeField] int tempScene = 0; //a holder vairable to keep track of what scene/level the player left off on
+    int currentScene;
 
     private void Awake() //method runs before start (look up unity execution order)
     {
@@ -36,12 +39,16 @@ public class GameSession : MonoBehaviour
     {
         //display the current score
         displayScore();
+        
+
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        
         //speed of game
         Time.timeScale = gameSpeed;
     }
@@ -64,15 +71,28 @@ public class GameSession : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    public void setTempScene()
+    {
+        tempScene = currentScene;
+    }
 
-    //next two methods are for keeping track of the current story state the player is on
-    public int GetNextState()
+    //next two methods are for keeping track of the current story state and scene the player is on
+    public int GetNext()
     {
         currentState++; //inc next
-        return currentState;
+        //int totalScenes = SceneManager.sceneCountInBuildSettings;
+        tempScene = tempScene + currentState;
+        return tempScene;
     }
+
     public int GetCurrentState()
     {
+        if (tempScene > 1)
+        { 
+            currentState = tempScene - 1;
+            Debug.Log("I am here");
+        }
+        
         return currentState;
     }
 }

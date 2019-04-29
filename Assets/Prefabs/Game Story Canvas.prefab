@@ -278,7 +278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4572731437190673435
 RectTransform:
   m_ObjectHideFlags: 0
@@ -312,4 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 4572731437053770444}
-  startingState: {fileID: 11400000, guid: 8cf487d2383564f47b14afce10e34b2a, type: 2}
+  allStates:
+  - {fileID: 11400000, guid: 8cf487d2383564f47b14afce10e34b2a, type: 2}
+  - {fileID: 11400000, guid: dc222b711432b1c48a804ef7154aa7b5, type: 2}
+  - {fileID: 11400000, guid: c3fcaaef9350b604bbc23e44a4f4f5ad, type: 2}

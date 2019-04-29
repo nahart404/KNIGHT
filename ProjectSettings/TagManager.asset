@@ -18,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Story Layer
+  - Title
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Story Layer
+    uniqueID: 4027844793
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

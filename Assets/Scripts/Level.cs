@@ -11,6 +11,7 @@ public class Level : MonoBehaviour
 
     //class references
     SceneLoader loader;  //Sceneloader class reference
+    GameSession game;
 
     public void Start()
     {
@@ -32,7 +33,7 @@ public class Level : MonoBehaviour
         if (breakableBlocks <= 0)
         {
             //loader.LoadNextScene(); //call LoadNextScene() from Sceneloader
-            loader.LoadStoryScene(); //call to load story scene
+            loader.LoadStoryState(); //call to load story scene
         }
     }
 }

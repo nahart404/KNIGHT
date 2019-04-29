@@ -9,36 +9,35 @@ public class SceneLoader : MonoBehaviour
     int currentSceneIndex;
 
     //config
-    [SerializeField] GameObject storyState;
-    [SerializeField] GameObject gameState;
+    //[SerializeField] GameObject storyState;
+    //[SerializeField] GameObject gameState;
+    [SerializeField] StoryScene storyStateObject;
 
     //references
     GameSession game;
+    //StoryScene storyStateObject;
 
     private void Awake()
     {
         game = FindObjectOfType<GameSession>();
+        //storyStateObject = FindObjectOfType<StoryScene>();
 
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex; //gets the scene index to use
-
+        //storyState = GameObject.Find("storyState");
     }
 
     //loads the next scene
     public void LoadNextScene()
     {
-        /*problem: currentSceneIndex and currentStateIndex are not exactly the same. (scene should be 1 more
-         than state) and that causes a problem with transition to the correct scene after the correct state
-         */
-      
+        storyStateObject.gameObject.SetActive(false);
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex; //gets the scene index to use
         SceneManager.LoadScene(currentSceneIndex + 1); //loads the next scene after this current one
         
-
     }
     //loads the story scene and returns the player's level progression
     public void LoadStoryState()
     {
-        storyState.SetActive(true);
+        storyStateObject.gameObject.SetActive(true);
         //SceneManager.LoadScene(1); //1 should be the build index of the storyScene from the project build settings
 
     }

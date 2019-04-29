@@ -11,10 +11,12 @@ public class Level : MonoBehaviour
 
     //class references
     SceneLoader loader;  //Sceneloader class reference
-    GameSession game;
+    Ball ball1;
+    
 
     public void Start()
     {
+        ball1 = FindObjectOfType<Ball>(); ; //the ball in the scene
         loader = FindObjectOfType<SceneLoader>(); //reference the values of loader when the code starts
     }
 
@@ -33,6 +35,9 @@ public class Level : MonoBehaviour
         if (breakableBlocks <= 0)
         {
             //loader.LoadNextScene(); //call LoadNextScene() from Sceneloader
+            //ball1.GetComponent<Rigidbody2D>().isKinematic = true; //freezes the ball in place
+            ball1.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
             loader.LoadStoryState(); //call to load story scene
         }
     }

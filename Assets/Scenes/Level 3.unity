@@ -2165,6 +2165,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23315347b263e784ba9dfe4778dcdda4, type: 3}
+--- !u!1 &3090733011785812793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6457543297705865099, guid: 23315347b263e784ba9dfe4778dcdda4,
+    type: 3}
+  m_PrefabInstance: {fileID: 3090733011785812792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3090733011785812794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6048388046300258103, guid: 23315347b263e784ba9dfe4778dcdda4,
+    type: 3}
+  m_PrefabInstance: {fileID: 3090733011785812792}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3765128713111935467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2597,6 +2609,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 7679372262791662310, guid: fff0e12163ef9ec46a9000431f0dc006,
+        type: 3}
+      propertyPath: paddle1
+      value: 
+      objectReference: {fileID: 550627294}
     - target: {fileID: 7679372262791662306, guid: fff0e12163ef9ec46a9000431f0dc006,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2652,11 +2669,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7679372262791662310, guid: fff0e12163ef9ec46a9000431f0dc006,
-        type: 3}
-      propertyPath: paddle1
-      value: 
-      objectReference: {fileID: 550627294}
     - target: {fileID: 7679372263206618899, guid: fff0e12163ef9ec46a9000431f0dc006,
         type: 3}
       propertyPath: m_Volume
@@ -2744,5 +2756,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7865820754579839140, guid: 68981b26f9e274e47934ac6b1700200a,
+        type: 3}
+      propertyPath: storyState
+      value: 
+      objectReference: {fileID: 3090733011785812794}
+    - target: {fileID: 7865820754579839140, guid: 68981b26f9e274e47934ac6b1700200a,
+        type: 3}
+      propertyPath: gameState
+      value: 
+      objectReference: {fileID: 3090733011785812793}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68981b26f9e274e47934ac6b1700200a, type: 3}

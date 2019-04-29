@@ -39,8 +39,6 @@ public class GameSession : MonoBehaviour
     {
         //display the current score
         displayScore();
-        
-
     }
 
 
@@ -71,10 +69,10 @@ public class GameSession : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    public void setTempScene()
+    /*public void setTempScene()
     {
         tempScene = currentScene;
-    }
+    }*/
 
     //next two methods are for keeping track of the current story state and scene the player is on
     public int GetNext()
@@ -85,7 +83,7 @@ public class GameSession : MonoBehaviour
         return tempScene;
     }
 
-    public int GetCurrentState()
+    /*public int GetCurrentState()
     {
         if (tempScene > 1)
         { 
@@ -94,5 +92,5 @@ public class GameSession : MonoBehaviour
         }
         
         return currentState;
-    }
+    }*/
 }

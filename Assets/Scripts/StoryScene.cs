@@ -22,6 +22,7 @@ public class StoryScene : MonoBehaviour
     {
         loader = FindObjectOfType<SceneLoader>(); //reference the values of loader when the code starts
         game = FindObjectOfType<GameSession>();
+        
 
         //then set up the current state and get story text from it (buildindex should be the same as what state)
         state = allStates[SceneManager.GetActiveScene().buildIndex];

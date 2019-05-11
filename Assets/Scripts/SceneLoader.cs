@@ -9,37 +9,29 @@ public class SceneLoader : MonoBehaviour
     int currentSceneIndex;
 
     //config
-    //[SerializeField] GameObject storyState;
-    //[SerializeField] GameObject gameState;
     [SerializeField] StoryScene storyStateObject;
 
     //references
     GameSession game;
-    //StoryScene storyStateObject;
 
     private void Awake()
     {
         game = FindObjectOfType<GameSession>();
-        //storyStateObject = FindObjectOfType<StoryScene>();
-
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex; //gets the scene index to use
-        //storyState = GameObject.Find("storyState");
     }
 
     //loads the next scene
     public void LoadNextScene()
     {
-        storyStateObject.gameObject.SetActive(false);
+        //storyStateObject.gameObject.SetActive(false); //set back to false to hide it
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex; //gets the scene index to use
         SceneManager.LoadScene(currentSceneIndex + 1); //loads the next scene after this current one
         
     }
     //loads the story scene and returns the player's level progression
-    public void LoadStoryState()
+    public void ShowStoryState()
     {
-        storyStateObject.gameObject.SetActive(true);
-        //SceneManager.LoadScene(1); //1 should be the build index of the storyScene from the project build settings
-
+        storyStateObject.gameObject.SetActive(true); //show story state
     }
 
     //returns the user to the starting scene
@@ -49,6 +41,11 @@ public class SceneLoader : MonoBehaviour
 
         //delete gameStatus to restart
         FindObjectOfType<GameSession>().resetGame(); //Must remember that calling functions from other classes isn't the same a c++
+    }
+
+    public StoryScene GetStoryStateObject()
+    {
+        return storyStateObject;
     }
 
     //quit game

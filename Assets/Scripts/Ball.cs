@@ -44,6 +44,12 @@ public class Ball : MonoBehaviour
         }
         
         LaunchBall(); //launches the ball from the paddle on click
+
+        //create new method and if statement for when player hits the "e" key
+        if (Input.GetKeyDown(KeyCode.E)) //if "e" pressed
+        {
+            PullBackPower();
+        }
     }
 
     private void LaunchBall()
@@ -64,6 +70,13 @@ public class Ball : MonoBehaviour
         Vector2 paddlePosition = new Vector2(paddle1.transform.position.x, paddle1.transform.position.y);
         //now change the position of the ball to the paddle's with the paddleDistVect
         transform.position = paddlePosition + paddleDistVect;
+    }
+
+    //Method that grants the player "Pull back", allowing them to reset the ball onto the paddle mid level
+    private void PullBackPower()
+    {
+        //simply set "hasStarted" back to false and the method in update will run again
+        hasStarted = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision) //create a method to activate on collision

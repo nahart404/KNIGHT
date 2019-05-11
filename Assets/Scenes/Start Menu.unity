@@ -718,7 +718,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1296850517}
-        m_MethodName: LoadStoryState
+        m_MethodName: ShowStoryState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

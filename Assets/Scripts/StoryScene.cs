@@ -23,12 +23,10 @@ public class StoryScene : MonoBehaviour
         loader = FindObjectOfType<SceneLoader>(); //reference the values of loader when the code starts
         game = FindObjectOfType<GameSession>();
         
-
         //then set up the current state and get story text from it (buildindex should be the same as what state)
         state = allStates[SceneManager.GetActiveScene().buildIndex];
-        //state = startingState;
-        textComponent.text = state.GetStateStory();
 
+        textComponent.text = state.GetStateStory();
 }
 
     // Update is called once per frame
@@ -37,24 +35,7 @@ public class StoryScene : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            /*problem: currentSceneIndex and currentStateIndex are not exactly the same. (scene should be 1 more
-         than state) and that causes a problem with transition to the correct scene after the correct state
-         */
-            //ManageState(); //set up the next scenes/states
-
             loader.LoadNextScene(); //call LoadNextScene() from Sceneloader
-
         }
-    }
-
-    private void ManageState()
-    {
-        var nextStates = state.GetNextStates(); //gets value from State class's method
-
-        //inc state and scene index by one
-        game.GetNext();
-        
-        
-        textComponent.text = state.GetStateStory(); //update text for when state has changed
     }
 }

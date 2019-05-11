@@ -18,6 +18,8 @@ public class Level : MonoBehaviour
     {
         ball1 = FindObjectOfType<Ball>(); ; //the ball in the scene
         loader = FindObjectOfType<SceneLoader>(); //reference the values of loader when the code starts
+
+        loader.GetStoryStateObject().gameObject.SetActive(false); //set back to false to hide it
     }
 
     //each time this method is called, it adds to the number of breakable Blocks in the level
@@ -34,11 +36,9 @@ public class Level : MonoBehaviour
         //then check if the number of breakable blocks have reached zero (win condition)
         if (breakableBlocks <= 0)
         {
-            //loader.LoadNextScene(); //call LoadNextScene() from Sceneloader
-            //ball1.GetComponent<Rigidbody2D>().isKinematic = true; //freezes the ball in place
             ball1.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
-            loader.LoadStoryState(); //call to load story scene
+            loader.ShowStoryState(); //call to load story scene
         }
     }
 }

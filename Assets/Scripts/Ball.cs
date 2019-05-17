@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;*/
 using UnityEngine;
+using System.Collections;
 
 public class Ball : MonoBehaviour
 {
@@ -13,11 +14,13 @@ public class Ball : MonoBehaviour
     [SerializeField] float volume = .04f; //set the volume
     [SerializeField] float randomFactor = .02f; //added to help fix the bug where the ball gets stuck on a horizonal axis
 
-
+    //var
     bool hasStarted = false;
+    float coolDown = 8f; //cooldown time for power 
+    float nextPowerUse; //the next sloted time the player can use the power again
 
-    //state
-    Vector2 paddleDistVect; //distance (gap) between the paddle and the ball
+   //state
+   Vector2 paddleDistVect; //distance (gap) between the paddle and the ball
 
     //Cached Component References
     AudioSource ballAudio;
@@ -31,8 +34,10 @@ public class Ball : MonoBehaviour
 
         //when game starts, get needed references
         ballAudio = GetComponent<AudioSource>();
-        myRigidBody2D = GetComponent<Rigidbody2D>();
+        myRigidBody2D = GetComponent<Rigidbody2D>();   
         
+        nextPowerUse = coolDown; //set up the timer
+
     }
 
     // Update is called once per frame
@@ -45,10 +50,11 @@ public class Ball : MonoBehaviour
         
         LaunchBall(); //launches the ball from the paddle on click
 
-        //create new method and if statement for when player hits the "e" key
-        if (Input.GetKeyDown(KeyCode.E)) //if "e" pressed
+        //create new method and if statement for when player hits the "e" key with the correct waited time
+        if (Input.GetKeyDown(KeyCode.E) && Time.time > nextPowerUse) //if "e" pressed and game time is more than the needed amount of time waited
         {
             PullBackPower();
+            nextPowerUse = nextPowerUse + coolDown; //update the next time the player can use the power again    
         }
     }
 

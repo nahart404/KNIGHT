@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Level.cs" />
      <Compile Include="Assets\Scripts\LoseCollider.cs" />
      <Compile Include="Assets\Scripts\Paddle.cs" />
+     <Compile Include="Assets\Scripts\PowerLabel.cs" />
      <Compile Include="Assets\Scripts\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\State.cs" />
      <Compile Include="Assets\Scripts\StoryScene.cs" />

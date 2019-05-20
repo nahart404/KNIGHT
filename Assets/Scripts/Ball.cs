@@ -13,18 +13,22 @@ public class Ball : MonoBehaviour
     [SerializeField] AudioClip[] ballSounds; //array fo audio clips used for the ball
     [SerializeField] float volume = .04f; //set the volume
     [SerializeField] float randomFactor = .02f; //added to help fix the bug where the ball gets stuck on a horizonal axis
-
+ 
     //var
     bool hasStarted = false;
     float coolDown = 8f; //cooldown time for power 
     float nextPowerUse; //the next sloted time the player can use the power again
+    int spriteIndex; //used fro the sprite array
 
-   //state
-   Vector2 paddleDistVect; //distance (gap) between the paddle and the ball
+    //state
+    Vector2 paddleDistVect; //distance (gap) between the paddle and the ball
 
     //Cached Component References
     AudioSource ballAudio;
     Rigidbody2D myRigidBody2D;
+
+    //class reference
+    PowerLabel label; //class ref to help control label sprites
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +41,9 @@ public class Ball : MonoBehaviour
         myRigidBody2D = GetComponent<Rigidbody2D>();   
         
         nextPowerUse = coolDown; //set up the timer
+        spriteIndex = 0; //Always starts at 0
+
+        label = FindObjectOfType<PowerLabel>(); //set up class ref
 
     }
 
@@ -50,11 +57,20 @@ public class Ball : MonoBehaviour
         
         LaunchBall(); //launches the ball from the paddle on click
 
+        //Set up when to change sprite label
+        if (Time.time > nextPowerUse) //if the cooldown time is up, change sprite
+        {
+            spriteIndex = 1;
+            label.ShowNextSprite(spriteIndex);
+        }
         //create new method and if statement for when player hits the "e" key with the correct waited time
         if (Input.GetKeyDown(KeyCode.E) && Time.time > nextPowerUse) //if "e" pressed and game time is more than the needed amount of time waited
-        {
+        {            
             PullBackPower();
-            nextPowerUse = nextPowerUse + coolDown; //update the next time the player can use the power again    
+            nextPowerUse = Time.time + coolDown; //update the next time the player can use the power again
+            //change the sprite back to "deactive"
+            spriteIndex = 0;
+            label.ShowNextSprite(spriteIndex);
         }
     }
 

@@ -10,6 +10,7 @@ public class Block : MonoBehaviour
     [SerializeField] float volume = .04f; //set the volume
     [SerializeField] GameObject blockParticlesVFX;
     [SerializeField] Sprite[] hitSprites; //array of sprites for blocks that need more than one hit to break
+    [SerializeField] public string type; //for the color changer script (left, right, or none)
 
     //references to other classes !!!Don't forget to assign values to references (FindObjectOfType<>())!
     Level level;
@@ -18,11 +19,14 @@ public class Block : MonoBehaviour
     int timesHit;
 
     public void Start()
-    {
+    {        
         CountBlocks(); /*assigns level and counts the number of breakable blocks that the player
-                        needs to destroy in the level to move on to the next*/
+                        needs to destroy in the level to move on to the next*/       
     }
+    void Update()
+    {
 
+    }
     private void CountBlocks()
     {
         //find and assign what level is
@@ -79,6 +83,13 @@ public class Block : MonoBehaviour
         {
             Debug.LogError("Something went wrong with the sprite array" + gameObject.name);
         }
+    }
+
+    //method used to pass over type
+    public string TypeSet()
+    {
+        
+        return type;
     }
 
     private void DestroyBlock()

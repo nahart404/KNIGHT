@@ -10,18 +10,6 @@ public class PowerLabel : MonoBehaviour
     //var
    // int spriteIndex; //used fro the sprite array
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     //makes the sprite renderer in unity display a new sprite from the array
     public void ShowNextSprite(int spriteIndex)
     {

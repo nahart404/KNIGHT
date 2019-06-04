@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Ball.cs" />
      <Compile Include="Assets\Scripts\BallLink.cs" />
      <Compile Include="Assets\Scripts\Block.cs" />
+     <Compile Include="Assets\Scripts\BlockChanger.cs" />
      <Compile Include="Assets\Scripts\GameSession.cs" />
      <Compile Include="Assets\Scripts\Level.cs" />
      <Compile Include="Assets\Scripts\LoseCollider.cs" />

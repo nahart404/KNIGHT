@@ -4118,7 +4118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &782230894
 Transform:
   m_ObjectHideFlags: 0
@@ -4899,26 +4899,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3266240343187771945, guid: f88ad85950724fc4fbfa854cf8ff928e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 3266240343187771945, guid: f88ad85950724fc4fbfa854cf8ff928e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -7.837
-      objectReference: {fileID: 0}
-    - target: {fileID: 3266240343187771945, guid: f88ad85950724fc4fbfa854cf8ff928e,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0064832
-      objectReference: {fileID: 0}
-    - target: {fileID: 3266240343187771945, guid: f88ad85950724fc4fbfa854cf8ff928e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0236044
-      objectReference: {fileID: 0}
     - target: {fileID: 3266240341688041617, guid: f88ad85950724fc4fbfa854cf8ff928e,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -4948,6 +4928,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 12.176
+      objectReference: {fileID: 0}
+    - target: {fileID: 3266240343187771945, guid: f88ad85950724fc4fbfa854cf8ff928e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 3266240343187771945, guid: f88ad85950724fc4fbfa854cf8ff928e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.837
+      objectReference: {fileID: 0}
+    - target: {fileID: 3266240343187771945, guid: f88ad85950724fc4fbfa854cf8ff928e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0064832
+      objectReference: {fileID: 0}
+    - target: {fileID: 3266240343187771945, guid: f88ad85950724fc4fbfa854cf8ff928e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0236044
       objectReference: {fileID: 0}
     - target: {fileID: 3266240341688041618, guid: f88ad85950724fc4fbfa854cf8ff928e,
         type: 3}
@@ -9672,7 +9672,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1979069895
 Transform:
   m_ObjectHideFlags: 0

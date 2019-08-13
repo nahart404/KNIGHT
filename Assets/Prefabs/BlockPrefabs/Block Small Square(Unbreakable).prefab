@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5616466005968749849}
   - component: {fileID: 3616528364199777454}
   - component: {fileID: 5790698346300215065}
+  - component: {fileID: 3180886563451387069}
   m_Layer: 0
   m_Name: Block Small Square(Unbreakable)
   m_TagString: Unbreakable
@@ -96,6 +97,8 @@ MonoBehaviour:
   breakingSound: {fileID: 8300000, guid: 858e67ef0734a674b9b5c55a2885505e, type: 3}
   volume: 0.04
   blockParticlesVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
+  hitSprites: []
+  type: 
 --- !u!61 &5790698346300215065
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -122,3 +125,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &3180886563451387069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4471581703005999967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ea3ec04483ddb488eb7bfd9f5166be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
